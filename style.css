@@ -1,0 +1,131 @@
+body {
+    font-family: "Tahoma", Arial, sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+    direction: rtl; /* لأن النظام عربي */
+    color: #333;
+}
+
+h2 {
+    text-align: center;
+    color: #222;
+    margin-top: 20px;
+}
+
+/* الروابط */
+a {
+    color: #0d6efd;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+
+/* القائمة الرئيسية (dashboard) */
+ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    padding: 15px;
+    background: #343a40;
+    margin: 0;
+}
+ul li a {
+    color: white;
+    background: #0d6efd;
+    padding: 8px 15px;
+    border-radius: 6px;
+    transition: 0.3s;
+}
+ul li a:hover {
+    background: #0b5ed7;
+}
+
+/* الفورم */
+form {
+    max-width: 500px;
+    margin: 20px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+form input, form textarea, form select, form button {
+    width: 100%;
+    margin-bottom: 12px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+}
+form button {
+    background: #198754;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+form button:hover {
+    background: #157347;
+}
+
+/* الجداول */
+table {
+    width: 90%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background: white;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+table th, table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+    font-size: 14px;
+}
+table th {
+    background: #0d6efd;
+    color: white;
+}
+table tr:nth-child(even) {
+    background: #f2f2f2;
+}
+table img {
+    max-width: 100px;
+    border-radius: 6px;
+}
+
+/* رسائل النجاح والخطأ */
+p[style*="color:red"] {
+    text-align: center;
+    font-weight: bold;
+    color: #dc3545 !important;
+}
+p[style*="color:green"] {
+    text-align: center;
+    font-weight: bold;
+    color: #198754 !important;
+}
+
+/* أزرار صغيرة داخل الجداول */
+table a {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 4px;
+    margin: 2px;
+}
+table a[href*="edit"] {
+    background: #ffc107;
+    color: black;
+}
+table a[href*="delete"], 
+table a[href*="permdelete"] {
+    background: #dc3545;
+    color: white;
+}
+table a[href*="restore"] {
+    background: #198754;
+    color: white;
+}
