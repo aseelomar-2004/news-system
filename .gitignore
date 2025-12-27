@@ -1,0 +1,17 @@
+
+!uploads/.gitkeep
+
+.DS_Store
+Thumbs.db
+
+.vscode/
+.idea/
+
+# Environment files
+.env
+
+
+node_modules/
+
+# Logs
+*.log
