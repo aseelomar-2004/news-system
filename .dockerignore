@@ -1,0 +1,26 @@
+.git
+.gitignore
+
+# Uploaded files
+uploads/*
+!uploads/.gitkeep
+
+# Documentation
+docs/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+
+# Environment files
+.env
+
+# Logs
+*.log
+
+
+docker-compose.yml
