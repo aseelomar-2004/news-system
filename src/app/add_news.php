@@ -1,5 +1,6 @@
 <?php
-require_once 'auth.php';
+require_once __DIR__ . '/../auth/auth.php';
+
 
 // جلب الفئات لعرضها في القائمة المنسدلة
 $categories_sql = "SELECT * FROM categories ORDER BY name ASC";

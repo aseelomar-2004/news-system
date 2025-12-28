@@ -1,5 +1,6 @@
 <?php
-require_once 'auth.php';
+require_once __DIR__ . '/../auth/auth.php';
+
 
 // التحقق من وجود معرف الخبر
 if (!isset($_GET['id']) || empty($_GET['id'])) {

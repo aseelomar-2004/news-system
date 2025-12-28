@@ -1,5 +1,6 @@
 <?php
-require_once 'auth.php'; // يتضمن config.php ويتحقق من تسجيل الدخول
+require_once __DIR__ . '/../auth/auth.php';
+ // يتضمن config.php ويتحقق من تسجيل الدخول
 
 // جلب جميع الأخبار غير المحذوفة من قاعدة البيانات مع اسم الفئة واسم المستخدم
 $sql = "SELECT news.*, categories.name AS category_name, users.name AS user_name 

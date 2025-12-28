@@ -1,5 +1,6 @@
 <?php
-require_once 'auth.php';
+require_once __DIR__ . '/../auth/auth.php';
+
 
 // جلب جميع الفئات من قاعدة البيانات
 $sql = "SELECT * FROM categories ORDER BY id DESC";

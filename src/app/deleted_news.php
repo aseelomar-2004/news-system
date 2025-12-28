@@ -1,5 +1,6 @@
 <?php
-require_once 'auth.php';
+require_once __DIR__ . '/../auth/auth.php';
+
 
 // جلب جميع الأخبار المحذوفة
 $sql = "SELECT news.*, categories.name AS category_name, users.name AS user_name 
