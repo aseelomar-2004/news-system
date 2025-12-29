@@ -30,8 +30,6 @@ news-system/
 │ ├─ screenshots/ # Assignment screenshots
 │ └─ notes.md # Technical notes
 
-yaml
-نسخ الكود
 
 ---
 
@@ -46,37 +44,24 @@ Make sure you have:
 ---
 
 ### 2️⃣ Clone the Repository
-```bash
 git clone https://github.com/aseelomar-2004/news-management.git
 cd news-management
 3️⃣ Build the Docker Image
-bash
-نسخ الكود
 docker build -t news-system-app .
 ⏳ The first build may take several minutes because the PHP base image is downloaded.
 
 4️⃣ Run the Container
-bash
-نسخ الكود
 docker run -d -p 8080:80 --name news-system-container news-system-app
 5️⃣ Open the Application
 Open your browser and go to:
-
 arduino
-نسخ الكود
 http://localhost:8080
 🛑 Stop and Clean Up
 Stop the container
-bash
-نسخ الكود
 docker stop news-system-container
 Remove the container
-bash
-نسخ الكود
 docker rm news-system-container
 (Optional) Remove the image
-bash
-نسخ الكود
 docker rmi news-system-app
 ⚙️ Configuration Notes
 Apache Port: 8080 → mapped to container port 80
@@ -91,8 +76,7 @@ Database Password: empty (default XAMPP setup)
 
 Database configuration can be found in:
 
-arduino
-نسخ الكود
+
 src/config/config.php
 🧪 How to Test the Project
 Make sure MySQL is running in XAMPP
@@ -109,8 +93,7 @@ Start the Docker container
 
 Visit:
 
-bash
-نسخ الكود
+
 http://localhost:8080/auth/login.php
 Log in and test:
 

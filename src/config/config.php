@@ -7,7 +7,6 @@ define('DB_SERVER', 'host.docker.internal');
 define('DB_USERNAME', 'root');
 define('DB_PASSWORD', '');
 define('DB_NAME', 'news_system');
-
 // الاتصال بقاعدة البيانات
 $conn = new mysqli(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
 
