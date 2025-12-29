@@ -121,5 +121,7 @@ Edit/delete news
 Manage categories
 
 Author
+
 Name: Aseel Omar
+
 GitHub: https://github.com/aseelomar-2004
