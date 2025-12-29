@@ -3,9 +3,9 @@
 session_start();
 
 // إعدادات قاعدة البيانات (Docker → XAMPP MySQL)
-define('DB_SERVER', 'host.docker.internal'); // 🔴 مهم
+define('DB_SERVER', 'host.docker.internal');
 define('DB_USERNAME', 'root');
-define('DB_PASSWORD', ''); // XAMPP عادة بدون كلمة مرور
+define('DB_PASSWORD', '');
 define('DB_NAME', 'news_system');
 
 // الاتصال بقاعدة البيانات
