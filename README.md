@@ -46,16 +46,20 @@ Make sure you have:
 ### 2️⃣ Clone the Repository
 git clone https://github.com/aseelomar-2004/news-management.git
 cd news-management
+
 3️⃣ Build the Docker Image
 docker build -t news-system-app .
 ⏳ The first build may take several minutes because the PHP base image is downloaded.
 
 4️⃣ Run the Container
 docker run -d -p 8080:80 --name news-system-container news-system-app
+
+
 5️⃣ Open the Application
 Open your browser and go to:
 arduino
 http://localhost:8080
+
 🛑 Stop and Clean Up
 Stop the container
 docker stop news-system-container
@@ -63,6 +67,7 @@ Remove the container
 docker rm news-system-container
 (Optional) Remove the image
 docker rmi news-system-app
+
 ⚙️ Configuration Notes
 Apache Port: 8080 → mapped to container port 80
 
@@ -78,6 +83,8 @@ Database configuration can be found in:
 
 
 src/config/config.php
+
+
 🧪 How to Test the Project
 Make sure MySQL is running in XAMPP
 
