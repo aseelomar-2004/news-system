@@ -5,11 +5,14 @@ Thumbs.db
 # PHP
 /vendor/
 
-# Environment
+# Environment files
 .env
+
+# Uploads (optional)
+uploads/*
 
 # Logs
 *.log
 
-# Uploads
-uploads/*
+# Docker
+*.pid
