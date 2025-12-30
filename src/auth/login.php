@@ -85,7 +85,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         <button class="btn btn-primary btn-block">تسجيل الدخول</button>
         <p class="mt-3 text-center">
             ليس لديك حساب؟
-            <a href="/auth/register.php">إنشاء حساب</a>
+            <a href="/app/register.php">إنشاء حساب</a>
         </p>
     </form>
 </div>
