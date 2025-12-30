@@ -1,7 +1,6 @@
 <?php
 require_once __DIR__ . '/../auth/auth.php';
 
-
 // جلب جميع الأخبار المحذوفة
 $sql = "SELECT news.*, categories.name AS category_name, users.name AS user_name 
         FROM news 
@@ -18,48 +17,54 @@ $result = $conn->query($sql);
 <head>
     <meta charset="UTF-8">
     <title>الأخبار المحذوفة</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-   
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
+
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="dashboard.php">نظام الأخبار</a>
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item"><a class="nav-link" href="dashboard.php">العودة للرئيسية</a></li>
-        </ul>
-    </nav>
 
-    <div class="container mt-4">
-        <h2>الأخبار المحذوفة</h2>
-        <p>هنا قائمة بجميع الأخبار التي تم حذفها.</p>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="/app/dashboard.php">نظام الأخبار</a>
+    <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+            <a class="nav-link" href="/app/dashboard.php">العودة للرئيسية</a>
+        </li>
+    </ul>
+</nav>
 
-        <table class="table table-bordered table-striped">
-            <thead class="thead-light">
+<div class="container mt-4">
+    <h2>الأخبار المحذوفة</h2>
+    <p>هنا قائمة بجميع الأخبار التي تم حذفها.</p>
+
+    <table class="table table-bordered table-striped">
+        <thead class="thead-light">
+            <tr>
+                <th>#</th>
+                <th>عنوان الخبر</th>
+                <th>الفئة</th>
+                <th>الناشر</th>
+            </tr>
+        </thead>
+        <tbody>
+        <?php if ($result && $result->num_rows > 0): ?>
+            <?php while ($row = $result->fetch_assoc()): ?>
                 <tr>
-                    <th>#</th>
-                    <th>عنوان الخبر</th>
-                    <th>الفئة</th>
-                    <th>الناشر</th>
+                    <td><?= $row['id'] ?></td>
+                    <td><?= htmlspecialchars($row['title']) ?></td>
+                    <td><?= htmlspecialchars($row['category_name']) ?></td>
+                    <td><?= htmlspecialchars($row['user_name']) ?></td>
                 </tr>
-            </thead>
-            <tbody>
-                <?php if ($result && $result->num_rows > 0 ): ?>
-                    <?php while ($row = $result->fetch_assoc()): ?>
-                        <tr>
-                            <td><?php echo $row['id']; ?></td>
-                            <td><?php echo htmlspecialchars($row['title']); ?></td>
-                            <td><?php echo htmlspecialchars($row['category_name']); ?></td>
-                            <td><?php echo htmlspecialchars($row['user_name']); ?></td>
-                        </tr>
-                    <?php endwhile; ?>
-                <?php else: ?>
-                    <tr>
-                        <td colspan="4" class="text-center">لا توجد أخبار محذوفة لعرضها.</td>
-                    </tr>
-                <?php endif; ?>
-            </tbody>
-        </table>
-    </div>
+            <?php endwhile; ?>
+        <?php else: ?>
+            <tr>
+                <td colspan="4" class="text-center">لا توجد أخبار محذوفة</td>
+            </tr>
+        <?php endif; ?>
+        </tbody>
+    </table>
+</div>
+
 </body>
 </html>
+
 <?php $conn->close(); ?>

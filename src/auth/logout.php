@@ -9,5 +9,5 @@ $_SESSION = [];
 session_destroy();
 
 // إعادة التوجيه إلى صفحة تسجيل الدخول
-redirect('login.php');
+redirect('auth/login.php');
 ?>

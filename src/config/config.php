@@ -1,32 +1,33 @@
 <?php
-// بدء الجلسة (Session)
-session_start();
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 
-// إعدادات قاعدة البيانات (Docker → XAMPP MySQL)
-define('DB_SERVER', 'db');
+/* ===== BASE URL ===== */
+define('BASE_URL', 'http://localhost:8081');
+
+/* ===== DATABASE ===== */
+define('DB_SERVER', 'news-system-db'); // Docker service name
 define('DB_USERNAME', 'root');
 define('DB_PASSWORD', 'root');
 define('DB_NAME', 'news_system');
 
-// الاتصال بقاعدة البيانات
 $conn = new mysqli(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
-
-// التحقق من الاتصال
 if ($conn->connect_error) {
-    die("فشل الاتصال بقاعدة البيانات: " . $conn->connect_error);
+    die("DB Error: " . $conn->connect_error);
 }
-
-// دعم UTF-8
 $conn->set_charset("utf8mb4");
 
-// التحقق من تسجيل الدخول
+/* ===== HELPERS ===== */
 function isLoggedIn() {
     return isset($_SESSION['user_id']);
 }
 
-// إعادة توجيه
-function redirect($url) {
-    header("Location: " . $url);
-    exit();
+function redirect($path) {
+    if (filter_var($path, FILTER_VALIDATE_URL)) {
+        header("Location: $path");
+    } else {
+        header("Location: " . BASE_URL . "/" . ltrim($path, '/'));
+    }
+    exit;
 }
-?>

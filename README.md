@@ -57,7 +57,7 @@ docker run -d -p 8080:80 --name news-system-container news-system-app
 
 5️⃣ Open the Application
 Open your browser and go to:
-arduino
+
 http://localhost:8080
 
 🛑 Stop and Clean Up
