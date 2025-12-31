@@ -7,7 +7,7 @@ if (session_status() === PHP_SESSION_NONE) {
 define('BASE_URL', 'http://localhost:8081');
 
 /* ===== DATABASE ===== */
-define('DB_SERVER', 'news-system-db'); // Docker service name
+define('DB_SERVER',  'db'); // Docker service name
 define('DB_USERNAME', 'root');
 define('DB_PASSWORD', 'root');
 define('DB_NAME', 'news_system');
