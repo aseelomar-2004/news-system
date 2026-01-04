@@ -1,13 +1,11 @@
 <?php
-if (session_status() === PHP_SESSION_NONE) {
-    session_start();
-}
+session_start();
 
 /* ===== BASE URL ===== */
 define('BASE_URL', 'http://localhost:8081');
 
 /* ===== DATABASE ===== */
-define('DB_SERVER',  'db'); // Docker service name
+define('DB_SERVER', 'db');
 define('DB_USERNAME', 'root');
 define('DB_PASSWORD', 'root');
 define('DB_NAME', 'news_system');
@@ -24,10 +22,6 @@ function isLoggedIn() {
 }
 
 function redirect($path) {
-    if (filter_var($path, FILTER_VALIDATE_URL)) {
-        header("Location: $path");
-    } else {
-        header("Location: " . BASE_URL . "/" . ltrim($path, '/'));
-    }
+    header("Location: " . BASE_URL . "/" . ltrim($path, '/'));
     exit;
 }
