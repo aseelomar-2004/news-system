@@ -7,8 +7,7 @@ services:
     ports:
       - "8081:80"
     depends_on:
-      db:
-        condition: service_healthy
+      - db
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost/health.php"]
       interval: 30s
