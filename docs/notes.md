@@ -27,3 +27,17 @@ Instead of making one large commit or using vague messages, I learned to:
 This makes the project easier to understand, review, and maintain, especially when working in teams
 or submitting professional assignments.
 
+```markdown
+# Notes on Deploying to GitHub Codespaces
+
+Challenges faced:
+
+1. **Port Forwarding:** Initially, the project did not appear in the browser preview. Had to manually enable port forwarding in Codespaces for the port used by the Docker container (usually 8080 or 80).
+
+2. **Docker Installation Check:** Needed to verify Docker was installed and running in the Codespace environment.
+
+3. **Docker Compose Warnings:** The warning about `version` in docker-compose.yml being obsolete appeared, but it did not affect the container deployment.
+
+4. **Successful Deployment:** After ensuring Docker Compose ran without errors and the port was forwarded, the project was accessible in the browser preview.
+
+Overall, deploying in Codespaces was straightforward once the port forwarding and Docker verification steps were completed.

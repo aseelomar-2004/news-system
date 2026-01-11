@@ -115,3 +115,30 @@ Author
 Name: Aseel Omar
 
 GitHub: https://github.com/aseelomar-2004
+## Production URL
+
+The project is running in GitHub Codespaces and can be accessed at the following URL:
+
+[Open Project in Browser](https://shiny-system-6974v9w9qxgxf4q7x-8081.app.github.dev/auth/login.php)
+
+> Replace `YOUR_CODESPACE_NAME` with your actual Codespace name or preview link.
+
+---
+
+## Deployment Instructions Using Docker
+
+To deploy this project on any VPS or local machine:
+
+1. **Install Git and Docker** (if not installed):
+   ```bash
+  apt update
+  apt install git docker.io docker-compose -y
+
+2.Clone the repository:
+
+git clone https://github.com/aseelomar-2004/news-system
+cd news-system
+
+3.Build and run the Docker containers:
+
+docker compose up -d
